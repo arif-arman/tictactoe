@@ -27,75 +27,9 @@ public class Board {
 	public int evaluateBoard() {
 		if(XWon()) return 1;
 		else if(OWon()) return -1;
-		return 0;/*
-		int score = 0;
-		// check rows
-		for(int i=0;i<3;i++) {
-			int blank = 0;
-			int X = 0;
-			int O = 0;
-			for(int j=0;j<3;j++) {
-				if(blocks[i][j] == 0) blank++;
-				else if(blocks[i][j] == 1) X++;
-				else O++;
-			}
-			score += updateScore(X,O);
-		}
-		// check columns
-		for(int j=0;j<3;j++) {
-			int blank = 0;
-			int X = 0;
-			int O = 0;
-			for(int i=0;i<3;i++) {
-				if(blocks[i][j] == 0) blank++;
-				else if(blocks[i][j] == 1) X++;
-				else O++;
-			}
-			score += updateScore(X,O);
-			
-		}
-		// check first diagonal
-		int blank = 0;
-		int X = 0;
-		int O = 0;
-		for(int i=0,j=0;i<3;i++,j++) {
-			if(blocks[i][j] == 0) blank++;
-			else if(blocks[i][j] == 1) X++;
-			else O++;
-		}
-		score += updateScore(X,O);
-		
-		// check second diagonal
-		blank = 0;
-		X = 0;
-		O = 0;
-		for(int i=0,j=2;i<3;i++,j--) {
-			if(blocks[i][j] == 0) blank++;
-			else if(blocks[i][j] == 1) X++;
-			else O++;
-		}
-		score += updateScore(X, O);
-		
-		return score;
-		*/
+		return 0;
 	}
-	
-	/*
-	 *  checks number of X/O is a row,col or diagonal
-	 *  and assigns a value for X as max, O as min
-	 */
-	
-	public int updateScore(int X, int O) {
-		int change;
-		if(X==3) change = 100;
-		else if(X==2 && O==0) change = 10;
-		else if(X==1 && O==0) change = 1;
-		else if(O==3) change = -100;
-		else if(O==2 && X==0) change = -10;
-		else if(O==1 && X==0) change = -1;
-		else change = 0;
-		return change;
-	}
+
 	
 	/*
 	 * check to see if the game is over
